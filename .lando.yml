@@ -1,0 +1,17 @@
+name: bagisto
+recipe: laravel
+services:
+  database:
+    portforward: 32763
+config:
+  php: 7.3
+  via: nginx
+  database: mysql
+  webroot: public
+  xdebug: false
+  cache: redis
+tooling:
+  phpunit:
+    service: appserver
+    description: "Run PHP Unit tests: lando phpunit"
+    cmd: /app/vendor/bin/phpunit
